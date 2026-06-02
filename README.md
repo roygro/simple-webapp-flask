@@ -22,38 +22,40 @@ Simple WebApp Flask es una aplicación web básica desarrollada con Python y Fla
 
 ---
 
+---
+
 ## Project Strengths
 
-1. **Simplicidad**: Código mínimo y fácil de entender para desarrolladores nuevos.
-2. **Flask como base**: Usa uno de los frameworks Python más populares y documentados.
-3. **Ideal para DevOps**: Perfecto para practicar CI/CD, Docker y Kubernetes.
-4. **Rápida instalación**: Se puede ejecutar en minutos sin configuración compleja.
-5. **Open Source**: Cualquier desarrollador puede contribuir y mejorar el proyecto.
+1. **Gestión centralizada**: Unifica clientes, membresías, pagos, actividades e inventario en un solo sistema.
+2. **Seguridad robusta**: Autenticación por roles (administrador, recepcionista, instructor, cliente) con cifrado de datos.
+3. **Alertas automáticas**: Notificaciones de vencimiento de membresía, recordatorios de pago y confirmación de clases.
+4. **Multiplataforma**: Disponible en web y dispositivos móviles para mayor accesibilidad.
+5. **Dashboard administrativo**: Métricas clave como ingresos mensuales, tasa de renovación y asistencia promedio en tiempo real.
 
 ---
 
 ## Improvement Opportunities
 
-1. **Agregar autenticación**: No tiene sistema de login ni manejo de sesiones.
-2. **Base de datos**: Actualmente no persiste datos, podría integrarse con SQLite o PostgreSQL.
-3. **Tests automatizados**: No incluye pruebas unitarias ni de integración.
-4. **Dockerización**: Podría incluir un Dockerfile listo para usar.
-5. **Documentación de API**: No documenta los endpoints disponibles.
+1. **Integración con pasarelas de pago**: Ampliar soporte a más métodos de pago electrónico como PayPal o Stripe.
+2. **App móvil nativa**: Desarrollar una aplicación nativa para iOS y Android con mejor experiencia de usuario.
+3. **Reportes avanzados**: Incluir reportes exportables en PDF/Excel con análisis estadístico más detallado.
+4. **Sistema de gamificación**: Agregar recompensas o puntos para motivar la asistencia y fidelización de clientes.
+5. **Soporte multigimnasio**: Permitir que el sistema administre múltiples sucursales desde una sola cuenta.
 
 ---
 
 ## Technologies Used
 
-| Technology | Version | Purpose              |
-| ---------- | ------- | -------------------- |
-| Python     | 3.x     | Programming Language |
-| Flask      | 2.x     | Web Framework        |
-| HTML       | 5       | Frontend Structure   |
-| CSS        | 3       | Frontend Styling     |
-| Jinja2     | Latest  | Template Engine      |
-| Gunicorn   | Latest  | WSGI HTTP Server     |
-| Docker     | Latest  | Containerization     |
-| Git        | Latest  | Version Control      |
+| Technology          | Version | Purpose                      |
+| ------------------- | ------- | ---------------------------- |
+| Python              | 3.x     | Backend Programming Language |
+| Flask               | 2.x     | Web Framework                |
+| SQLite / PostgreSQL | Latest  | Database Management          |
+| HTML                | 5       | Frontend Structure           |
+| CSS                 | 3       | Frontend Styling             |
+| JavaScript          | ES6+    | Frontend Interactivity       |
+| Jinja2              | Latest  | Template Engine              |
+| Docker              | Latest  | Containerization             |
 
 ---
 
@@ -61,34 +63,42 @@ Simple WebApp Flask es una aplicación web básica desarrollada con Python y Fla
 
 ```mermaid
 graph LR
-  A[Browser / Client] --> B[Flask Web App]
-  B --> C[Jinja2 Templates]
-  B --> D[Python Routes]
-  D --> E[Application Logic]
-  C --> A
+  A[Cliente / Navegador] --> B[Flask Web App - HarmonyGym]
+  B --> C[Módulo de Autenticación]
+  B --> D[Módulo de Membresías]
+  B --> E[Módulo de Pagos]
+  B --> F[Módulo de Actividades]
+  B --> G[Módulo de Inventario]
+  C --> H[(Base de Datos)]
+  D --> H
+  E --> H
+  F --> H
+  G --> H
 ```
 
 ---
 
 ## Functional Requirements
 
-| ID    | Requirement                                                   |
-| ----- | ------------------------------------------------------------- |
-| RF-01 | The system shall display a welcome page to the user.          |
-| RF-02 | The system shall support HTTP GET requests on the main route. |
-| RF-03 | The system shall render dynamic HTML using Jinja2 templates.  |
-| RF-04 | The system shall return appropriate HTTP status codes.        |
-| RF-05 | The system shall be deployable in a Docker container.         |
-| RF-06 | The system shall run on Python 3.x environments.              |
-| RF-07 | The system shall support multiple routes for different pages. |
-| RF-08 | The system shall handle 404 errors with a custom error page.  |
-| RF-09 | The system shall be configurable via environment variables.   |
-| RF-10 | The system shall serve static files such as CSS and images.   |
+| ID    | Requirement                                                                                                                                |
+| ----- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| RF-01 | The system shall allow secure access through authentication by username and password, authorizing actions based on user profile.           |
+| RF-02 | The system shall allow registration of new clients with personal data, enrollment date, membership type and contact information.           |
+| RF-03 | The system shall allow searching and viewing detailed client information including membership status and payment history.                  |
+| RF-04 | The system shall allow registering a client payment, linking it to their membership and generating a receipt.                              |
+| RF-05 | The system shall display membership status (active, suspended, expired, expiring soon) and send automatic alerts 7 days before expiration. |
+| RF-06 | The system shall store and display a payment history per client.                                                                           |
+| RF-07 | The system shall allow creating, modifying, accepting or rejecting group activities and their schedules, managing available spots.         |
+| RF-08 | The system shall allow registering, consulting, editing and deleting instructors and assigning them to activities.                         |
+| RF-09 | The system shall allow inventory control of products with minimum stock alerts and movement records.                                       |
+| RF-10 | The system shall generate unique QR codes per client for quick attendance registration at facilities and activities.                       |
 
 ---
 
 ## Team Members
 
-| Name                           | Role                      |
-| ------------------------------ | ------------------------- |
-| Princes Rocio Guerrero Sánchez | Developer & Documentation |
+| Name                            | Role                      |
+| ------------------------------- | ------------------------- |
+| Camarillo Olaez Juana Jaqueline | Developer & Documentation |
+| Guerrero Sánchez Princes Rocio  | Developer & Documentation |
+| Rios Rios Carol Guadalupe       | Developer & Documentation |
