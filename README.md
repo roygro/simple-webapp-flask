@@ -22,8 +22,6 @@ Simple WebApp Flask es una aplicación web básica desarrollada con Python y Fla
 
 ---
 
----
-
 ## Project Strengths
 
 1. **Gestión centralizada**: Unifica clientes, membresías, pagos, actividades e inventario en un solo sistema.
@@ -102,6 +100,7 @@ graph LR
 | Camarillo Olaez Juana Jaqueline | Developer & Documentation |
 | Guerrero Sánchez Princes Rocio  | Developer & Documentation |
 | Rios Rios Carol Guadalupe       | Developer & Documentation |
+
 ---
 
 ## Evidence
